@@ -1,9 +1,9 @@
-#Phonotactic Language Model
+# Phonotactic Language Model
 
-##About
+## About
 This repo contains code from Mayer and Nelson (2020) for phonotactic learning with recurrent neural language models
 
-##Contents
+## Contents
 `src` contains all necessary code
 
 `sample_data` contains files for training both feature and embedding models on an IPA transcribed version of the [CMU pronouncing dictionary](https://http://www.speech.cs.cmu.edu/cgi-bin/cmudict), and using fit models to make predictions on the nonce words used in Daland et al (2011). 
@@ -12,7 +12,7 @@ This repo contains code from Mayer and Nelson (2020) for phonotactic learning wi
 *   `features` contains a .csv file specifying an English feature set from Hayes (2009)
 
 
-##Running the models
+## Running the models
 Requirements: Python 3.6+ with NumPy and Pytorch (1.0 or later)
 
 Run `src/main.py` with the following necessary arguments
