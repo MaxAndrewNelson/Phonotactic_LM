@@ -7,7 +7,7 @@ from model import Emb_RNNLM, Feature_RNNLM
 from data_process import get_corpus_data, process_data, process_features
 from training import train_lm
 
-DEFAULT_FEATURES = False
+DEFAULT_FEATURES_FILE = None
 DEFAULT_D_EMB = 24
 DEFAULT_D_HID = 64
 DEFAULT_NUM_LAYERS = 1
@@ -38,14 +38,11 @@ if __name__ == "__main__":
         help='Path to output file with word judgements' 
     )
     parser.add_argument(
-        'features', type=int,
-        help='Whether or not features are being used',
-        default=0 
-    )
-    parser.add_argument(
-        'feature_file', type=str,
-        help='path to feature file, not used if features=False',
-        default=None
+        'feature_file', type=str, nargs="?",
+        help='Path to feature file. If specified, embeddings will be based on '
+        'the provided feature file. If not, embeddings will be learned during '
+        'training',
+        default=DEFAULT_FEATURES_FILE
     )
     parser.add_argument(
         '--d_emb', type=int, help='Number of dimensions for the output embedding.',
@@ -100,7 +97,7 @@ if __name__ == "__main__":
     rnn_params['tied'] = args.tied
     rnn_params['inv_size'] = inventory_size
 
-    if args.features == 0:
+    if not args.feature_file:
         RNN = Emb_RNNLM(rnn_params)
         print('Fitting embedding model...')
     else:
