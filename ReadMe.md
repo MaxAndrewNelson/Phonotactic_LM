@@ -7,9 +7,9 @@ This repo contains code from Mayer and Nelson (2020) for phonotactic learning wi
 `src` contains all necessary code
 
 `sample_data` contains files for training both feature and embedding models on an IPA transcribed version of the [CMU pronouncing dictionary](https://http://www.speech.cs.cmu.edu/cgi-bin/cmudict), and using fit models to make predictions on the nonce words used in Daland et al (2011). 
-*   `corpora` contains our version of the CMU dictionary
-*   `test_data` contains IPA transcribed stimuli from Daland et al (2011)
-*   `features` contains a .csv file specifying an English feature set from Hayes (2009)
+*   `corpora` contains our Finnish, Quechua, and English corpora.
+*   `test_data` contains our Finnish, Quechua, and English (Daland et al. 2011) test sets.
+*   `features` contains .csv files with featural specifications for Finnish, Quechua, and English. Based on the features from Hayes (2009).
 
 
 ## Running the models
