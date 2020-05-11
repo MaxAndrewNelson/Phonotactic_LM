@@ -37,7 +37,7 @@ Formats for training data, test data, and feature files should match those in th
 
 A sample version of the featural model can be run from the command line with:
 
-`python src/main.py ./sample_data/corpora/CMU_dict_IPA ./sample_data/test_data/Daland_et_al_IPA.txt Daland_judgments.txt ./sample_data/features/english.csv`
+`python src/main.py ./sample_data/corpora/CMU_dict_IPA.txt ./sample_data/test_data/Daland_et_al_IPA.txt Daland_judgments.txt ./sample_data/features/english.csv`
 
 This will fit a 23x64 RNN (there are 23 features specified in `english.csv`) on the CMU dictionary with a 60/40 dev-train split for 10 epochs and create a text file, `Daland_judgements.txt`, which contains the perplexities the fit model assigns to all words listed in `Daland_et_al_IPA.txt`.
 
