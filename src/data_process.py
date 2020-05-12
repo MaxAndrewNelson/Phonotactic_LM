@@ -41,7 +41,7 @@ def process_data(string_training_data, dev=True, training_split=60):
         # training method that doesn't compute Dev perplexity
         dev = torch.stack(as_ixs[-10:], 0)
     else:
-        split = len(as_ixs) // training_split
+        split = int(len(as_ixs) * (training_split/100))
         training_data = torch.stack(as_ixs[:split], 0)
         dev = torch.stack(as_ixs[split:], 0)
 
